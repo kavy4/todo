@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import TodosList from './components/TodosList'
+import Stats from './components/Stats'
+import Button from './UI/Button/Button'
+import { useEffect, useState } from 'react'
+import Popup from './UI/Popup/Popup'
+import Form from './components/Form'
+import { useSelector } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const todo = useSelector(state => state.main)
+  const [isOpenCreatePopup, setIsOpenCreatePopup] = useState(false)
+
+  useEffect(() => {
+    localStorage.todo = JSON.stringify(todo)
+  })
+
+  return <>
+    <Button onClick={() => setIsOpenCreatePopup(true)}>Create todo</Button>
+
+    <Popup isOpenSettings={{ isOpen: isOpenCreatePopup, setIsOpen: setIsOpenCreatePopup }}>
+      <Form />
+    </Popup>
+
+    <Stats />
+    <TodosList />
+  </>
 }
 
-export default App;
+export default App

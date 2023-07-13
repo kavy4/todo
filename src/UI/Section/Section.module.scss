@@ -1,0 +1,14 @@
+%SectionStyle {
+    color: white;
+    font-size: var(--font-size-primary);
+    font-weight: bold;
+    
+    padding: 12px 24px;
+    border-radius: var(--border-radius-primary);
+
+    background-color: var(--bg-color-primary);
+}
+
+#section {
+    @extend %SectionStyle;
+}

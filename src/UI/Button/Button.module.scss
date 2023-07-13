@@ -1,0 +1,18 @@
+@import '../Section/Section.module.scss';
+
+#button {
+    @extend %SectionStyle;
+
+    border: 0;
+
+    cursor: pointer;
+    transition: var(--transition-duration-primary);
+
+    &:hover {
+        background-color: var(--bg-color-primary-hover);
+    }
+
+    &[data-type="asd"] {
+        opacity: 0.75;
+    }
+}
