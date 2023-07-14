@@ -1,0 +1,11 @@
+$sizes: ( "mobile": 320px, "tablet": 768px, "laptop": 1024px, "desktop": 1280px );
+
+@mixin media($type) {
+    @each $size, $resolution in $sizes {
+        @if $type == $size {
+            @media (min-width: $resolution) {
+                @content;
+            }
+        }
+    }
+}

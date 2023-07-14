@@ -1,4 +1,4 @@
-import './App.scss'
+import './style/App.scss'
 import TodosList from './components/TodosList'
 import Stats from './components/Stats'
 import Button from './UI/Button/Button'
