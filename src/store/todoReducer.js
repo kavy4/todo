@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const todoReducer = createSlice({
     name: 'todo',
-    initialState: JSON.parse(localStorage.todo) || [],
+    initialState: localStorage.todo ? JSON.parse(localStorage.todo) : [],
 
     reducers: {
         addTodo: (state, action) => {
