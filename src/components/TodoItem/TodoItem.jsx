@@ -12,10 +12,9 @@ const TodoItem = ({ todo, index }) => {
         event.preventDefault()
     }
 
-    const rootClassName = 'max-w-full w-full tablet:w-auto laptop:w-auto desktop:w-auto mr-6 mt-6 text-start opacity-'.concat(todo.isComplete ? '50' : '100')
-    
-
-    return <Button className={styles.todoItem} data-is-complete={todo.isComplete} onContextMenu={event => OnContextMenu(event)} onClick={() => dispatch(switchIsCompleteTodo(todo.id))}>{ index + 1 }. { todo.title }</Button>
+    return <Button className={styles.todoItem} data-is-complete={todo.isComplete} onContextMenu={event => OnContextMenu(event)} onClick={() => dispatch(switchIsCompleteTodo(todo.id))}>
+        { index + 1 }. { todo.title }
+    </Button>
 }
 
 export default TodoItem

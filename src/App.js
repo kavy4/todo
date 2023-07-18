@@ -8,11 +8,11 @@ import Form from './components/Form'
 import { useSelector } from 'react-redux'
 
 const App = () => {
-  const todo = useSelector(state => state.main)
+  const todos = useSelector(state => state.main)
   const [isOpenCreatePopup, setIsOpenCreatePopup] = useState(false)
 
   useEffect(() => {
-    localStorage.todo = JSON.stringify(todo)
+    localStorage.todo = JSON.stringify(todos)
   })
 
   return <>

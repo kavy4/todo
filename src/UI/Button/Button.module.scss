@@ -12,7 +12,7 @@
         background-color: var(--bg-color-primary-hover);
     }
 
-    &[data-type="asd"] {
+    &[data-type="disabled"] {
         opacity: 0.75;
     }
 }
